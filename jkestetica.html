@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK Estética Automotiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="logo">JK <span>Estética</span></div>
+        <nav class="menu">
+            <a href="#servicos">Serviços</a>
+            <a href="#higienizacao">Higienização</a>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="https://wa.me/5511971363855" target="_blank" class="btn-agendar">Agendar</a>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="banner-conteudo">
+            <h1>JK Estética Automotiva</h1>
+            <p>Excelência em cuidados automotivos — porque seu carro merece brilhar.</p>
+            <a href="https://wa.me/5511971363855" target="_blank" class="btn-banner">Agendar Agora</a>
+        </div>
+    </section>
+
+    <section id="servicos" class="servicos">
+        <h2>Serviços</h2>
+        <div class="cards">
+            <div class="card fade-in">
+                <h3>Lavagem Nível 1</h3>
+                <ul>
+                    <li>Pré-lavagem e detalhamento externo</li>
+                    <li>Limpeza de rodas e caixas</li>
+                    <li>Aspiração completa</li>
+                    <li>Aplicação de cera protetora (até 4 meses)</li>
+                </ul>
+                <p><strong>A partir de R$ 60</strong></p>
+            </div>
+
+            <div class="card fade-in">
+                <h3>Lavagem Nível 2</h3>
+                <ul>
+                    <li>Todos os serviços do nível 1</li>
+                    <li>Revitalização de plásticos internos</li>
+                    <li>Selante de pintura (proteção de até 6 meses)</li>
+                </ul>
+                <p><strong>A partir de R$ 75</strong></p>
+            </div>
+
+            <div class="card fade-in">
+                <h3>Padrão JK</h3>
+                <ul>
+                    <li>Lavagem nível 2 + higienização completa</li>
+                    <li>Remoção de chuva ácida</li>
+                    <li>Cristalização de para-brisa</li>
+                    <li>Higienização dos cintos e portas</li>
+                </ul>
+                <p><strong>A partir de R$ 250</strong></p>
+            </div>
+        </div>
+    </section>
+<div class="hig">
+            <img src="JK.png" alt="">
+        </div>
+    <section id="higienizacao" class="higienizacao fade-in">
+
+        <h2>Higienização de Bancos</h2>
+        <ul>
+            <li>Remoção dos bancos (se necessário)</li>
+            <li>Produto bactericida específico</li>
+            <li>Hidratação (para bancos de couro)</li>
+        </ul>
+        <p><strong>A partir de R$ 150</strong></p>
+        <h2>Higienização Completa do Interior</h2>
+        <ul>
+            <li>Limpeza detalhada do painel, portas e teto</li>
+            <li>Aplicação de germicida</li>
+            <li>Revitalização dos plásticos</li>
+        </ul>
+        <p><strong>A partir de R$ 400</strong></p>
+    </section>
+
+    <section id="sobre" class="sobre fade-in">
+        <h2>Sobre Nós</h2>
+        <p>Somos especialistas em estética automotiva, oferecendo serviços que unem tecnologia, dedicação e paixão por carros. Cada detalhe é tratado com excelência para garantir o melhor resultado ao seu veículo.</p>
+    </section>
+
+    <footer class="rodape">
+        <div class="social">
+            <a href="https://wa.me/5511971363855" target="_blank">WhatsApp</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+        <p>© 2025 JK Estética Automotiva — Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Efeito de rolagem suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animação de entrada ao rolar
+        const faders = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        faders.forEach(fader => observer.observe(fader));
+    </script>
+</body>
+</html>
